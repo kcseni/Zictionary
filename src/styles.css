@@ -1,0 +1,111 @@
+
+ html, body {
+  height: 100%;
+  margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    
+  }
+
+  h1 {
+    font-size: large;
+    font-style:oblique;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  div{
+    
+    color:blueviolet;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  
+
+  .wrapper{
+    background-color: aliceblue;
+    padding: 30px 30px 30px 30px;
+    border-radius: 15px;
+    border: 2px solid navy;
+    width: 400px;
+   
+  }
+
+  .wrapper header{
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .wrapper .search{
+    margin: 5px 0 0px;
+    position: relative;
+    
+  }
+  .search mat-form-field{
+    width: 100% ;
+    font-size: 16px;
+
+  }
+  .search input{
+    padding: 0 10px;
+    
+  }
+
+  small{
+    position: absolute;
+    
+    top: 2px;
+  }
+
+  .wrapper .selection{
+    margin-top: 20px;
+    padding-top: 20px;
+
+  }
+
+
+  option{
+    font-size:14px;
+  }
+
+  .mat-input-element::placeholder{
+    color: grey;
+ }
+  
+ small{
+   position: relative;
+ }
+
+  .wrapper ul{
+    padding-left: 0px;
+  }
+
+  .wrapper ul li{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid blueviolet;    
+    
+  }
+
+  ul .word p{
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  ul .word span{
+    font-size: 12px;
+  }
+
+
+
+
+  
+
+  
+
+  
+
+

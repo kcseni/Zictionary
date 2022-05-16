@@ -1,0 +1,10 @@
+<div class="wrapper">
+    <div class="main" *ngIf="hasRoute('/')" >
+        <header>Zakuszka's Dictionary</header>
+        <app-translate></app-translate>
+    </div>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+</div>
+
+

@@ -1,0 +1,61 @@
+<div class="selection row ">
+  <mat-form-field appearance="outline" class="col col-2"  style="width:140px; font-size: medium;">
+    <mat-label>From</mat-label>
+    <select matNativeControl [(ngModel)]="selectedLanguagefrom" (change)="onLanguageChangefrom(); searchTerm=''; ready=false">
+      <option *ngFor="let language of differentlangsname"
+      [selected]="language === ngDropdownfrom"
+      [value] = "language">{{ language }}</option>  
+    </select>
+  </mat-form-field>
+
+  
+    <button mat-button (click)="switchLanguages()" class="col justify-content-start" style="margin-top:-28px" >
+        <mat-icon>swap_horiz</mat-icon>
+    </button>
+  
+  
+  
+    <mat-form-field appearance="outline"  class="col col-6" style="width:140px; font-size: medium;">
+      <mat-label>To</mat-label>
+      <select matNativeControl [(ngModel)]="selectedLanguageto" (change)="getTranslation()">
+        <option *ngFor="let language of selectablelangsname"
+        [selected]="language === ngDropdownto"
+        [value] = "language">{{ language }}</option>  
+      </select>
+    </mat-form-field>
+
+  
+</div>
+  
+
+<div class="search">
+    <mat-form-field appearance="outline">
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput type="search"
+                  placeholder="Type a word."
+                  [(ngModel)]="searchTerm" 
+                  (keyup.enter)="getTranslation()"
+                  >
+          
+      <button mat-button *ngIf="searchTerm" matSuffix mat-icon-button aria-label="Clear" (click)="searchTerm=''; word=''; ready=false; error=false">
+      <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <small  *ngIf="error==true" >Not found.</small>
+</div>
+  
+<div class="ready" *ngIf="ready">
+  <ul>
+    <li class="word">
+      <div class="translation">
+        <p>{{word}}</p>
+        <span>{{pos}}</span>
+      </div>
+    </li>
+  </ul>
+  </div>
+<app-synonym 
+[word]="word"
+[selectedLanguageto] = "selectedLanguageto"
+[ready] ="ready"
+></app-synonym>

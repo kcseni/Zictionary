@@ -1,0 +1,15 @@
+
+<div class="synonym" *ngIf="checkIfSynExist()==true">
+<button mat-raised-button color="primary" (click)="getSynonym()">Show synonyms</button>
+</div>
+<div *ngIf="error ">
+  <small>Sorry, there are no synonyms for this word.</small>
+</div>
+
+<cdk-virtual-scroll-viewport *ngIf="show && checkIfSynExist()==true" itemSize="40" class="container">
+  <div class="synlist" *cdkVirtualFor="let s of synonym">
+    {{s}}
+  </div>
+</cdk-virtual-scroll-viewport>
+
+
