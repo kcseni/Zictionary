@@ -1,0 +1,2 @@
+# Zictionary
+Angular dictionary app
